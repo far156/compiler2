@@ -1,0 +1,30 @@
+Question 3: Write a C program to test whether a given identifier is valid or not.
+Code:
+#include<stdio.h>
+#include<conio.h>
+#include<ctype.h>
+
+int main()
+{
+    char string[20];
+    int flag,i=0;
+    printf("Enter a String: ");
+    gets(string);
+    if(isalpha(string[0]))
+        flag=1;
+    else
+    printf("\n Value Is not valid...");
+    while(string[i]!='\0')
+    {
+        if(!isdigit(string[i]) && !isalpha(string[i]))
+        {
+            flag=0;
+            break;
+        }
+        i++;
+    }
+    if(flag==1)
+        printf("Value Is Valid..");
+    getch();
+
+}
